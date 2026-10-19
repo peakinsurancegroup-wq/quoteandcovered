@@ -22,6 +22,7 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'AW-18155823955');
+  gtag('config', 'G-VT62RWZ9LK');
   </script>
 
   <style>
@@ -253,6 +254,7 @@
     function finish(){ if (finished) return; finished = true; done(); }
     try {
       if (typeof window.gtag === 'function' && sendTo.indexOf('REPLACE_') === -1) {
+        if (sendTo === QUOTE_CONVERSION) { window.gtag('event', 'generate_lead', { lead_source: 'zip_quote', value: 1.0, currency: 'USD' }); }
         window.gtag('event', 'conversion', { send_to: sendTo, value: 1.0, currency: 'USD', event_callback: finish });
         setTimeout(finish, 600); // tracking never blocks the handoff
         return;
