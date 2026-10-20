@@ -100,13 +100,15 @@
     .products .kicker{color:var(--lime)}
     .products .sub{color:rgba(255,255,255,.82)}
     .prod-grid{display:grid;grid-template-columns:minmax(280px,.9fr) 1.6fr;gap:18px;margin-top:36px}
-    .prod-feature{display:flex;flex-direction:column;justify-content:space-between;gap:22px;padding:28px;border-radius:var(--radius);background:linear-gradient(160deg,var(--blue-bright) 0%,var(--blue) 100%);color:var(--white);text-decoration:none;box-shadow:0 16px 40px rgba(0,0,0,.25);transition:transform .2s}
+    .prod-feature{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:0;padding:36px 28px;border-radius:var(--radius);background:linear-gradient(160deg,var(--blue-bright) 0%,var(--blue) 100%);color:var(--white);text-decoration:none;box-shadow:0 16px 40px rgba(0,0,0,.25);transition:transform .2s}
     .prod-feature:hover{transform:translateY(-2px)}
     .prod-feature .ic{display:block;color:var(--white)}
-    .prod-feature .ic svg{height:84px;width:auto;display:block}
-    .prod-feature b{display:block;font-size:26px;font-weight:800;letter-spacing:-.01em}
-    .prod-feature small{display:block;font-size:15px;line-height:1.55;opacity:.9;margin-top:8px}
-    .prod-feature em{display:inline-block;font-style:normal;font-weight:800;color:var(--navy);background:var(--lime);border-radius:999px;padding:10px 18px;margin-top:18px}
+    .prod-feature .t{display:block;width:100%}
+    .prod-feature .ic svg{height:96px;width:auto;display:block;margin:0 auto 18px}
+    .prod-feature b{display:block;font-size:30px;font-weight:800;letter-spacing:-.01em}
+    .prod-feature small{display:block;font-size:15px;line-height:1.55;opacity:.9;margin-top:10px;max-width:30ch;margin-inline:auto}
+    .prod-feature em{display:block;width:100%;font-style:normal;font-weight:800;font-size:17px;color:var(--navy);background:var(--lime);border-radius:12px;padding:15px 20px;margin-top:26px;box-shadow:0 8px 20px rgba(0,0,0,.2);transition:transform .15s,filter .15s}
+    .prod-feature:hover em{transform:translateY(-1px);filter:brightness(1.05)}
     .prod-list{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(6,auto);grid-auto-flow:column;gap:10px;align-content:start}
     .prod{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--white);text-decoration:none;transition:background .2s,border-color .2s}
     .prod:hover{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.3)}
