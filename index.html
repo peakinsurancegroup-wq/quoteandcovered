@@ -34,7 +34,7 @@
   <style>
     :root{
       /* GEICO palette: logo blue #144995 (matches the Exclusive Agency lockup), text #222222, green #00843D, plus the bright blue, deep navy and lime geico.com uses on screen */
-      --blue:#144995; --blue-bright:#0057C2; --blue-mid:#004894; --navy:#062342; --blue-deep:#062342; --lime:#C8F547; --green:#00843D;
+      --blue:#144995; --blue-bright:#0057C2; --blue-mid:#004894; --navy:#062342; --blue-deep:#062342; --lime:#A8DC80; --green:#00843D;
       --ink:#222222; --muted:#5d6b7c; --line:#dfe6ef; --white:#fff; --off:#f4f7fb;
       --radius:16px; --shadow:0 20px 60px rgba(6,35,66,.3);
       --font:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
@@ -122,9 +122,10 @@
 
     /* steps: numbered timeline */
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px;position:relative;text-align:left}
-    .hero .how{margin-top:44px;padding-top:36px;border-top:1px solid rgba(255,255,255,.14);text-align:left}
+    .hero .how{margin-top:44px;padding-top:40px;border-top:1px solid rgba(255,255,255,.14);text-align:center}
+    .hero .how h2{color:var(--white);margin-top:10px;font-size:clamp(24px,3vw,34px)}
     .hero .how .eyebrow{margin-bottom:0;color:var(--lime)}
-    .hero .steps{margin-top:22px}
+    .hero .steps{margin-top:34px}
     .hero .steps::before{background:rgba(255,255,255,.22)}
     .hero .step b{background:var(--lime);color:var(--navy);box-shadow:none}
     .hero .step h3{color:var(--white);font-size:17px}
@@ -239,6 +240,7 @@
       <p class="disclosure">Independently owned and operated by Peak Insurance Group LLC</p>
       <div class="how" id="how">
         <p class="eyebrow">How it works</p>
+        <h2>Three steps to your GEICO quote.</h2>
         <div class="steps">
           <div class="step"><b>1</b><h3>Enter your ZIP code</h3><p>That is all GEICO needs to start your quote.</p></div>
           <div class="step"><b>2</b><h3>See your GEICO quote</h3><p>You go straight to GEICO's secure quote page with our office attached.</p></div>
