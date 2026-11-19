@@ -426,7 +426,9 @@
       ev.preventDefault();
       try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
       setTimeout(function () {
-        if (window.pageYOffset > 4) window.scrollTo(0, 0); // animation stalled or unsupported
+        if (window.pageYOffset > 4) { // animation stalled or unsupported: jump without animating
+          var de = document.documentElement; de.style.scrollBehavior = 'auto'; window.scrollTo(0, 0); de.style.scrollBehavior = '';
+        }
         if (zipInput) { try { zipInput.focus({ preventScroll: true }); } catch (e) { zipInput.focus(); } }
       }, 900);
     });
