@@ -419,12 +419,16 @@
     });
   });
 
-  // Any link to the ZIP box also places the cursor in it.
+  // Any link to the ZIP box scrolls to the top of the page and places the cursor in it.
   var zipInput = document.getElementById('zip');
   Array.prototype.forEach.call(document.querySelectorAll('a[href="#top"]'), function (a) {
-    a.addEventListener('click', function () {
-      if (!zipInput) return;
-      setTimeout(function () { try { zipInput.focus({ preventScroll: true }); } catch (e) { zipInput.focus(); } }, 500);
+    a.addEventListener('click', function (ev) {
+      ev.preventDefault();
+      try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { window.scrollTo(0, 0); }
+      setTimeout(function () {
+        if (window.pageYOffset > 4) window.scrollTo(0, 0); // animation stalled or unsupported
+        if (zipInput) { try { zipInput.focus({ preventScroll: true }); } catch (e) { zipInput.focus(); } }
+      }, 900);
     });
   });
 })();
