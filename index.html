@@ -62,7 +62,7 @@
     .hero{background:linear-gradient(180deg,rgba(6,35,66,0) 45%,var(--navy) 100%),linear-gradient(165deg,var(--blue-bright) 0%,var(--blue) 55%,var(--navy) 100%);color:var(--white);padding:44px 0 52px;text-align:center}
     .hero-stack{display:flex;flex-direction:column;align-items:center;gap:44px}
     .eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;opacity:.9;margin-bottom:18px}
-    h1{font-size:clamp(28px,3.6vw,44px);line-height:1.18;font-weight:800;letter-spacing:-.015em;max-width:24ch;margin:0 auto 6px}
+    h1{font-size:clamp(28px,3.6vw,44px);line-height:1.18;font-weight:800;letter-spacing:-.015em;max-width:32ch;margin:0 auto 6px;text-wrap:balance}
     h1 .lime{color:var(--lime)}
     .lead{margin:18px auto 0;font-size:18px;max-width:56ch;opacity:.95}
     .quote-card{background:var(--white);color:var(--ink);border-radius:var(--radius);padding:28px 28px 24px;box-shadow:var(--shadow);max-width:640px;margin:32px auto 0;text-align:left}
@@ -72,7 +72,8 @@
     .hero-stack .zip-form input{font-size:22px;padding:18px 16px;text-align:center}
     .hero-stack .zip-form button{font-size:19px;padding:18px 28px}
     .hero-stack .trust{justify-content:center}
-    .licensed{margin-top:16px;font-size:15px;font-weight:600;color:var(--ink);line-height:1.45}
+    .licensed{margin-top:16px;font-size:15px;font-weight:600;color:var(--ink);line-height:1.45;text-wrap:balance}
+    .hero-stack .hint,.call-big,.lead,.hero .how h2{text-wrap:balance}
     .quote-card h2{font-size:22px;font-weight:800;margin-bottom:4px}
     .quote-card .hint{color:var(--muted);font-size:15px;margin-bottom:16px}
     .zip-form{display:flex;gap:10px}
@@ -198,6 +199,8 @@
       .pill{display:none}
       .hero-stack .quote-card{padding:26px 18px 20px}
       .hero-stack .zip-form input{font-size:20px;padding:16px}
+      .hero-stack .quote-card .hint{font-size:16px}
+      .call-big{font-size:16px}
       .office,.prod-list{grid-template-columns:1fr}
       .prod-list{grid-template-rows:none;grid-auto-flow:row}
       .prod-feature .ic svg{height:64px}
