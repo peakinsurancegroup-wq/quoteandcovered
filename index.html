@@ -22,13 +22,12 @@
   <link rel="preload" as="image" href="images/geico-exclusive-agency.jpg">
   <link rel="preload" as="image" href="images/gecko.png">
 
-  <!-- Google tag (gtag.js) — Google Ads AW-18155823955 + GA4 G-VT62RWZ9LK -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18155823955"></script>
+  <!-- Google Analytics (GA4 G-VT62RWZ9LK). The only tracking on this page. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VT62RWZ9LK"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'AW-18155823955');
     gtag('config', 'G-VT62RWZ9LK');
   </script>
 
@@ -382,17 +381,15 @@
     + '&POL_gfrPicture=john-sanchez.jpg'
     + '&GENINFO_currentPageName=entry';
 
-  // Google Ads conversions (conversion actions 7857110148 / 7857110151).
-  var QUOTE_CONVERSION = 'AW-18155823955/ZE0vCIT5x6IdENPGr9FD';
-  var CALL_CONVERSION  = 'AW-18155823955/QmHTCIf5x6IdENPGr9FD';
-
-  function fire(sendTo, done) {
+  // Analytics events go to GA4 only.
+  function track(eventName, params, done) {
     var finished = false;
-    function finish(){ if (finished) return; finished = true; done(); }
+    function finish(){ if (finished) return; finished = true; if (done) done(); }
     try {
       if (typeof window.gtag === 'function') {
-        if (sendTo === QUOTE_CONVERSION) { window.gtag('event', 'generate_lead', { lead_source: 'zip_quote', value: 1.0, currency: 'USD' }); }
-        window.gtag('event', 'conversion', { send_to: sendTo, value: 1.0, currency: 'USD', event_callback: finish });
+        params = params || {};
+        params.event_callback = finish;
+        window.gtag('event', eventName, params);
         setTimeout(finish, 600); // tracking never blocks the handoff
         return;
       }
@@ -411,12 +408,12 @@
       var btn = form.querySelector('button');
       if (btn) { btn.disabled = true; btn.textContent = 'Opening your GEICO quote…'; }
       var url = GEICO_QUOTE_URL.replace('{ZIP}', encodeURIComponent(zip));
-      fire(QUOTE_CONVERSION, function () { window.location.href = url; });
+      track('generate_lead', { lead_source: 'zip_quote', value: 1.0, currency: 'USD' }, function () { window.location.href = url; });
     });
   });
 
   Array.prototype.forEach.call(document.querySelectorAll('a[data-call]'), function (a) {
-    a.addEventListener('click', function () { fire(CALL_CONVERSION, function(){}); });
+    a.addEventListener('click', function () { track('call_click', { link_url: a.href }); });
   });
 
   // Email clicks: GA4 event only (not an Ads conversion).
