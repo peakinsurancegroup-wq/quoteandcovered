@@ -93,9 +93,9 @@
     .call-big:hover{background:#eaf0fb}
     .disclosure{margin-top:36px;font-size:14px;opacity:.9;text-align:center}
     .disclosure a{color:var(--white)}
-    .callouts{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;width:100%;max-width:960px;margin:-18px auto -8px;padding:16px 24px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
-    .callouts li{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;line-height:1.3;text-align:left}
-    .callouts svg{flex:0 0 22px;width:22px;height:22px;fill:none;stroke:var(--lime);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+    .callouts{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;width:100%;max-width:960px;margin:-22px auto 0;padding:18px 26px;border-radius:14px;background:var(--white);color:var(--ink);box-shadow:0 16px 44px rgba(3,20,40,.32)}
+    .callouts li{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:700;line-height:1.3;text-align:left}
+    .callouts svg{flex:0 0 22px;width:22px;height:22px;fill:none;stroke:var(--blue);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 
     /* sections */
     section{padding:64px 0}
@@ -131,7 +131,8 @@
 
     /* steps: numbered timeline */
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:44px;position:relative;text-align:left}
-    .hero .how{margin-top:44px;padding-top:40px;border-top:1px solid rgba(255,255,255,.14);text-align:center}
+    .hero .how{width:100%;text-align:center}
+    .hero .hero-copy{width:100%;padding-top:40px;border-top:1px solid rgba(255,255,255,.14)}
     .hero .how h2{color:var(--white);margin-top:10px;font-size:clamp(24px,3vw,34px)}
     .hero .how .eyebrow{margin-bottom:0;color:var(--lime)}
     .hero .steps{margin-top:34px}
@@ -203,7 +204,7 @@
       .hero-stack .quote-card{padding:26px 18px 20px}
       .hero-stack .zip-form input{font-size:20px;padding:16px}
       .hero-stack .quote-card .hint{font-size:16px}
-      .callouts{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;padding:16px 14px;margin-top:-14px}
+      .callouts{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;padding:16px 14px;margin-top:-18px}
       .callouts li{font-size:13.5px;gap:8px}
       .callouts svg{flex-basis:20px;width:20px;height:20px}
       .call-big{font-size:16px}
@@ -253,13 +254,6 @@
         <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.800 7L4 20l1.100-4.600A8 8 0 1 1 21 12z"/></svg><span>Hablamos Español</span></li>
       </ul>
 
-      <div class="hero-copy">
-        <h1>GEICO auto insurance. A local agent.<br><span class="lime">Quote and covered in minutes.</span></h1>
-        <p class="lead">Enter your ZIP code to get a real GEICO quote. A few minutes, no obligation, and a local office you can call if you want a real person.</p>
-      </div>
-    </div>
-    <div class="wrap">
-      <p class="disclosure">Independently owned and operated by Peak Insurance Group LLC</p>
       <div class="how" id="how">
         <p class="eyebrow">How it works</p>
         <h2>Three steps to your GEICO quote.</h2>
@@ -269,6 +263,14 @@
           <div class="step"><b>3</b><h3>Start your policy, or call us</h3><p>Start online, or call and we will finish it together.</p></div>
         </div>
       </div>
+
+      <div class="hero-copy">
+        <h1>GEICO auto insurance. A local agent.<br><span class="lime">Quote and covered in minutes.</span></h1>
+        <p class="lead">Enter your ZIP code to get a real GEICO quote. A few minutes, no obligation, and a local office you can call if you want a real person.</p>
+      </div>
+    </div>
+    <div class="wrap">
+      <p class="disclosure">Independently owned and operated by Peak Insurance Group LLC</p>
     </div>
   </section>
 
