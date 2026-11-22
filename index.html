@@ -19,7 +19,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="preload" as="image" href="images/geico-exclusive-agency.jpg">
+  <link rel="preload" as="image" href="images/geico-local-office.png">
   <link rel="preload" as="image" href="images/gecko.png">
 
   <!-- Google Analytics (GA4 G-VT62RWZ9LK). The only tracking on this page. -->
@@ -74,7 +74,6 @@
     .hero-stack .zip-form input{font-size:22px;padding:18px 16px;text-align:center}
     .hero-stack .zip-form button{font-size:19px;padding:18px 28px}
     .hero-stack .trust{justify-content:center}
-    .licensed{margin-top:16px;font-size:15px;font-weight:600;color:var(--ink);line-height:1.45;text-wrap:balance}
     .hero-stack .hint,.call-big,.lead,.hero .how h2{text-wrap:balance}
     .quote-card h2{font-size:22px;font-weight:800;margin-bottom:4px}
     .quote-card .hint{color:var(--muted);font-size:15px;margin-bottom:16px}
@@ -94,8 +93,9 @@
     .call-big:hover{background:#eaf0fb}
     .disclosure{margin-top:36px;font-size:14px;opacity:.9;text-align:center}
     .disclosure a{color:var(--white)}
-    .strip{display:flex;justify-content:center;flex-wrap:wrap;gap:12px 32px;margin-top:30px;font-size:15px;opacity:.95}
-    .strip span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--lime);margin-right:10px;vertical-align:middle}
+    .callouts{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 30px;width:100%;max-width:960px;margin:-18px auto -8px;padding:16px 24px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
+    .callouts li{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:600;line-height:1.3;text-align:left}
+    .callouts svg{flex:0 0 22px;width:22px;height:22px;fill:none;stroke:var(--lime);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
     /* sections */
     section{padding:64px 0}
@@ -162,7 +162,7 @@
 
     .team{display:block;width:100%;height:auto;max-height:460px;object-fit:cover;object-position:center 35%;border-radius:var(--radius);margin:34px auto 0;box-shadow:0 16px 40px rgba(6,35,66,.16)}
 
-    .office{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px;text-align:left}
+    .office{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin:22px auto 0;max-width:760px;text-align:left}
     .office div{background:var(--white);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
     .office h3{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin-bottom:10px}
     .office p{font-size:16px;line-height:1.6}
@@ -203,6 +203,9 @@
       .hero-stack .quote-card{padding:26px 18px 20px}
       .hero-stack .zip-form input{font-size:20px;padding:16px}
       .hero-stack .quote-card .hint{font-size:16px}
+      .callouts{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;padding:16px 14px;margin-top:-14px}
+      .callouts li{font-size:13.5px;gap:8px}
+      .callouts svg{flex-basis:20px;width:20px;height:20px}
       .call-big{font-size:16px}
       .office,.prod-list{grid-template-columns:1fr}
       .prod-list{grid-template-rows:none;grid-auto-flow:row}
@@ -219,8 +222,8 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/" aria-label="John Sanchez, GEICO Local Office">
-      <img src="images/geico-exclusive-agency.jpg" alt="GEICO Exclusive Agency" width="138" height="46">
-      <div class="who"><strong>John Sanchez</strong><span>GEICO Local Office · Denver</span></div>
+      <img src="images/geico-local-office.png" alt="GEICO Local Office" width="147" height="46">
+      <div class="who"><strong>John Sanchez</strong><span>Your local agent</span></div>
     </a>
     <a class="pill" href="#top">Get a quote →</a>
   </div>
@@ -239,16 +242,20 @@
           <button type="submit">Get My Quote →</button>
         </form>
         <p class="zip-error">Please enter a 5-digit ZIP code.</p>
-        <p class="licensed">Licensed in Colorado, Arizona, Florida, Montana, New&nbsp;Mexico, Utah and Wyoming.</p>
         <div class="trust"><span>Real GEICO rates</span><span>A few minutes</span><span>No obligation</span></div>
       </div>
       </div>
 
+      <ul class="callouts" aria-label="Why quote with us">
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span>Exclusive GEICO Local Office</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="9" cy="11" r="2"/><path d="M5.5 16c.6-1.6 2-2.4 3.5-2.4s2.900.8 3.500 2.400M15 10h3M15 14h3"/></svg><span>Licensed Agents</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg><span>Quote Online or by Phone</span></li>
+        <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.800 7L4 20l1.100-4.600A8 8 0 1 1 21 12z"/></svg><span>Hablamos Español</span></li>
+      </ul>
+
       <div class="hero-copy">
-        <p class="eyebrow">Exclusive GEICO Agency · Denver, Colorado</p>
         <h1>GEICO auto insurance. A local agent.<br><span class="lime">Quote and covered in minutes.</span></h1>
         <p class="lead">Enter your ZIP code to get a real GEICO quote. A few minutes, no obligation, and a Denver office you can call if you want a real person.</p>
-        <div class="strip"><span>Based in Denver, Colorado</span><span>Online. By phone. In person.</span></div>
       </div>
     </div>
     <div class="wrap">
@@ -316,12 +323,11 @@
 
   <section class="center" id="office">
     <div class="wrap">
-      <p class="kicker">Come say hello</p>
+      <p class="kicker">Meet the team</p>
       <h2>Your local office. Your familiar faces.</h2>
       <img class="team" src="images/team.jpg" alt="The John Sanchez GEICO Local Office team in Denver" width="1600" height="1160" loading="lazy">
       <div class="office">
-        <div><h3>Address</h3><p>200 Quebec St<br>Bldg 600, Suite 201<br>Denver, CO 80230</p></div>
-        <div><h3>Hours</h3><p>Monday–Friday 9 AM – 6 PM<br>Saturday by appointment<br>Start an online quote anytime</p></div>
+        <div><h3>Hours</h3><p>Monday–Friday 9 AM – 6 PM Mountain Time<br>Saturday by appointment<br>Start an online quote anytime</p></div>
         <div><h3>Let's talk insurance</h3><p><a href="tel:+13038243430" data-call>303-824-3430</a><br><a href="mailto:john1sanchez@geico.com" data-email>john1sanchez@geico.com</a><br>Llame ahora · Hablamos Español</p></div>
       </div>
     </div>
@@ -332,10 +338,12 @@
       <p class="kicker">Good questions</p>
       <h2>A little clarity, before you start.</h2>
       <div style="margin-top:30px">
-        <details><summary>What happens after I enter my ZIP code?</summary><p>You go to GEICO's secure quote page with John Sanchez's office attached, so the quote and any help you need come through our Denver team.</p></details>
-        <details><summary>Is this GEICO?</summary><p>This is the local office of John Sanchez, a GEICO Local Office in Denver, independently owned and operated by Peak Insurance Group LLC. Quotes and policies are provided by GEICO.</p></details>
-        <details><summary>Can I get help before I buy?</summary><p>Yes. Call 303-824-3430 during office hours and a real person in our office will walk you through coverage, limits, and discounts. Hablamos Español.</p></details>
-        <details><summary>Do I have to live in Denver?</summary><p>No. Our office is in Denver and we're licensed in Colorado, Arizona, Florida, Montana, New&nbsp;Mexico, Utah and Wyoming. Enter your ZIP code and GEICO shows the rates for where you live.</p></details>
+        <details><summary>What happens after I enter my ZIP code?</summary><p>You go to GEICO's secure quote page with John Sanchez's office attached, so the quote and any help you need come through our GEICO Local Office.</p></details>
+        <details><summary>Does it cost anything to get a quote?</summary><p>No. Quotes are free and there is no obligation.</p></details>
+        <details><summary>Is this site the same as GEICO?</summary><p>This site belongs to the GEICO Local Office of John Sanchez, independently owned and operated by Peak Insurance Group LLC. We write GEICO policies, so the quote you get here is a real GEICO quote. We are not GEICO's corporate office.</p></details>
+        <details><summary>Is my information safe?</summary><p>Your quote is completed on GEICO's secure site. This site only uses your ZIP code to send you to the right quote, and it does not store it.</p></details>
+        <details><summary>Can I talk to a real person?</summary><p>Yes. Call 303-824-3430 during office hours and a licensed agent will help you quote or review your coverage. Hablamos Español.</p></details>
+        <details><summary>Can I start a policy today?</summary><p>Yes. Once you see your GEICO rate, you can start your policy on GEICO's secure site or finish with us by phone, and you choose the date your coverage begins.</p></details>
         <details><summary>Already a GEICO customer?</summary><p>For your policy, billing, or a claim, use the GEICO app or GEICO.com, or call our office and we'll point you to the right place.</p></details>
       </div>
     </div>
